@@ -1,6 +1,6 @@
 Die bob;
 int total = 0;
-int size = 50;
+int big = 50;
 void setup(){
  noLoop();
  size(500,500);
@@ -15,27 +15,27 @@ void draw(){
   if(keyPressed == true){
       if (key == CODED) {
       if (keyCode == UP) {
-        size += 10;
-        if(size >= 400){
-          size = 400;
+        big += 10;
+        if(big >= 400){
+          big = 400;
         }
       } else if (keyCode == DOWN) {
-        size -= 10;
-        if(size <= 10){
-          size = 10;
+        big -= 10;
+        if(big <= 10){
+          big = 10;
         }
       }
     }
   }
-  for (int i = 15; i < 500-size; i += size+10){
-    for (int o = 15; o < 500-size - 50; o += size+10){
-    Die bob = new Die(i, o, size);
+  for (int i = 15; i < 500-big; i += big+10){
+    for (int o = 15; o < 500-big - 50; o += big+10){
+    Die bob = new Die(i, o, big);
     bob.show();
     bob.roll();
     }
   }
   text("Total = " + total, 150, 475);
-  text("Size = " + size, 350, 475);
+  text("Size = " + big, 350, 475);
 }
 
 void mousePressed(){
